@@ -5,6 +5,7 @@
         <parameter name="browser" value="${browser}"/>
         <classes>
             <class name="testcases.LogInTests"></class>
+            <class name="testcases.ContactPhonesAndSchedulePopapTests"></class>
         </classes>
     </test>
 </suite>

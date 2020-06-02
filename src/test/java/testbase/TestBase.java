@@ -19,7 +19,7 @@ import org.testng.annotations.Parameters;
 public class TestBase {
     public static WebDriver driver;
     public static ElementsHelper elementsHelper;
-    public String testUrl = ("https://www.youtube.com/");
+    public String testUrl = ("https://rozetka.com.ua/");
 
     @BeforeGroups(groups="test_base")
     @Parameters("browser")
@@ -53,8 +53,8 @@ public class TestBase {
         driver.manage().window().maximize();
     }
 
-    @AfterGroups(groups="test_base")
-    public void quit() {
-        driver.quit();
-    }
+//    @AfterGroups(groups="test_base")
+//    public void quit() {
+//        driver.quit();
+//    }
 }
