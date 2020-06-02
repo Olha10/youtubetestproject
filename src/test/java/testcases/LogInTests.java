@@ -7,7 +7,7 @@ import testbase.TestBase;
 public class LogInTests extends TestBase {
     public LogInPageLocators logInPageLocators = new LogInPageLocators();
 
-    @Test (priority = 1)
+    @Test (priority = 1,groups = "test_base")
     public void LogInTest () {
         elementsHelper.isElementVisible(logInPageLocators.logInButton,10);
     }
