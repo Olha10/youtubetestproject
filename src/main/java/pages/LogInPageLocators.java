@@ -3,8 +3,9 @@ package pages;
 import org.openqa.selenium.By;
 
 public class LogInPageLocators {
-    public By accountButton = By.xpath("//a[@class='header-topline__user-link link-dashed']");
-    public By inputFieldEmail = By.cssSelector("[id='auth_email']");
-    public By inputFieldPassword = By.cssSelector("[id='auth_pass']");
-    public By buttonSignIn = By.cssSelector("[class='button button_size_large button_color_green auth-modal__submit']");
+    public By accountButton = By.cssSelector("[name='signin']");
+    public By inputFieldEmail = By.cssSelector("[name='login']");
+    public By inputFieldPassword = By.cssSelector("[name='password']");
+    public By buttonSignIn = By.cssSelector("[name='auth_submit']");
+    public By buttonClosePopap = By.cssSelector("[class='popup-close-medium-icon sprite']");
 }

@@ -11,6 +11,7 @@ public class LogInTests extends TestBase {
 
     @Test (priority = 1,groups = "test_base")
     public void LogInTest () {
+        elementsHelper.clickOnVisibleAndClickableElement(logInPageLocators.buttonClosePopap,10);
         elementsHelper.clickOnVisibleAndClickableElement(logInPageLocators.accountButton,10);
         elementsHelper.textInputField(logInPageLocators.inputFieldEmail,10,email);
         elementsHelper.textInputField(logInPageLocators.inputFieldPassword,10,password);
