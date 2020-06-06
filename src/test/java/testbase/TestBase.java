@@ -19,7 +19,7 @@ import org.testng.annotations.Parameters;
 public class TestBase {
     public static WebDriver driver;
     public static ElementsHelper elementsHelper;
-    public String testUrl = ("https://rozetka.com.ua/");
+    public String testUrl = ("https://twitter.com/explore");
 
     @BeforeGroups(groups="test_base")
     @Parameters("browser")
