@@ -4,11 +4,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.NavigationMoreMenuLocators;
 import pages.NavigationSidebarLocators;
+import pages.TwitterAdsPageLocators;
 import testbase.TestBase;
+
+import java.util.ArrayList;
 
 public class NavigationSidebarTests extends TestBase {
     NavigationSidebarLocators navigationSidebarLocators = new NavigationSidebarLocators();
     NavigationMoreMenuLocators navigationMoreMenuLocators = new NavigationMoreMenuLocators();
+    TwitterAdsPageLocators twitterAdsPageLocators = new TwitterAdsPageLocators();
 
     @Test(priority = 1, groups = "test_base")
     public void NavigationButtonTest() {
@@ -32,7 +36,20 @@ public class NavigationSidebarTests extends TestBase {
         Assert.assertTrue(elementsHelper.isElementClickable(navigationMoreMenuLocators.linkSettingsAndPrivacy, 10), "linkSettingsAndPrivacy should be clickable");
         Assert.assertTrue(elementsHelper.isElementClickable(navigationMoreMenuLocators.linkHelpCenter, 10), "linkHelpCenter should be clickable");
         Assert.assertTrue(elementsHelper.isElementClickable(navigationMoreMenuLocators.linkDisplay, 10), "linkDisplay should be clickable");
+    }
 
-
+    @Test(priority = 3,groups = "test_base")
+    public void TwitterAdsPage () {
+        String oldTab = driver.getWindowHandle();
+        elementsHelper.clickOnVisibleAndClickableElement(navigationMoreMenuLocators.linkTwitterAds,10);
+        ArrayList<String> newTab = new ArrayList<String>(driver.getWindowHandles());
+        newTab.remove(oldTab);
+        driver.switchTo().window(newTab.get(0));
+        elementsHelper.clickOnVisibleAndClickableElement(twitterAdsPageLocators.selectCountry,10);
+        elementsHelper.clickOnVisibleAndClickableElement(twitterAdsPageLocators.selectCountryUkraine,5);
+        driver.close();
+        driver.switchTo().window(oldTab);
+        elementsHelper.clickOnVisibleAndClickableElement(navigationSidebarLocators.buttonMoreMenu,10);
+        elementsHelper.clickOnVisibleAndClickableElement(navigationMoreMenuLocators.linkAnalytics,10);
     }
 }
